@@ -18,6 +18,7 @@ const NavBar = ({ location: { pathname } }) => {
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle />
+      
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" />
 
