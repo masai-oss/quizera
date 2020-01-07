@@ -14,9 +14,9 @@ const DashboardRoutes = props => {
     <>
       <Route path="/dash" render={NavBar} />
       <Route path="/dash" exact render={() => <Dashboard />} />
-      <Route path="/dash/settings" render={() => <Settings />} />
-      <Route path="/dash/profile" render={() => <Profile />} />
-      <Route path="/dash/reports" render={() => <Reports />} />
+      {/* <Route path="/dash/settings" render={() => <Settings />} /> */}
+      {/* <Route path="/dash/profile" render={() => <Profile />} /> */}
+      {/* <Route path="/dash/reports" render={() => <Reports />} /> */}
     </>
   ) : (
     <Redirect to="/login" />

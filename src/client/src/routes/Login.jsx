@@ -33,8 +33,8 @@ export default class Login extends React.Component {
       <div className="row justify-content-center">
         <Card className="m-5 p-5">
           <CardHeader
-            style={{ backgroundColor: "#313F9F" }}
-            className="p-2 pl-5 pr-5 text-white rounded-pill text-center"
+            style={{ backgroundColor: "#313F9F", fontSize: "50px" }}
+            className="p-3 pl-5 pr-5 text-white rounded-pill text-center"
             title="Login"
           />
           <br />

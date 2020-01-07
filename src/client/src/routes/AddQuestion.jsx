@@ -32,7 +32,7 @@ export default class AddQuestion extends React.Component {
   }
 
   render() {
-    const { questionType } = this.state;
+    const questionType = this.state.question_type;
     function questionDetails() {
       if (Number(questionType) === 1) {
         return (

@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.main.services.todo_service import add_new_todo
+from app.main.services.todo_services import add_new_todo
 
 todo = Blueprint("todo", __name__)
 
@@ -12,4 +12,5 @@ def home():
 @todo.route("/create", methods=['POST'])
 def create():
     data = request.json
+    print(request.json)
     return add_new_todo(data)
