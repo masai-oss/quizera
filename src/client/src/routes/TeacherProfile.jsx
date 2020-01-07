@@ -47,21 +47,21 @@ export default class TeacherProfile extends React.Component {
                 component="h4"
               >
                 Department: {department}
-              </Typography>{" "}
+              </Typography>
               <Typography
                 style={{ margin: "15px" }}
                 color="dark"
                 component="h4"
               >
                 Gender: {gender}
-              </Typography>{" "}
+              </Typography>
               <Typography
                 style={{ margin: "15px" }}
                 color="dark"
                 component="h4"
               >
                 Phone Number: {phoneNumber}
-              </Typography>{" "}
+              </Typography>
               <Typography
                 style={{ margin: "15px" }}
                 color="dark"
