@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-
+ 
 export default class TeacherProfile extends React.Component {
   constructor(props) {
     super(props);
