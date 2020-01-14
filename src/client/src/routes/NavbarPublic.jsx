@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Box from "@material-ui/core/Box";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -80,9 +81,11 @@ const NavBar = props => {
           <Button variant="contained" color="primary" onClick={handleLogin}>
             Login
           </Button>
-          <Button variant="contained" color="primary">
-            Register
-          </Button>
+          <Link to="/register">
+            <Button variant="contained" color="primary">
+              Register
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
 
