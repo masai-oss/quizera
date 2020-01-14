@@ -23,7 +23,7 @@ export default class Login extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    console.log(this.state);
+
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -31,7 +31,11 @@ export default class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+    const {email,password} = this.state
+    const data = {
+      email,
+      password
+    };
   }
 
  render() {
