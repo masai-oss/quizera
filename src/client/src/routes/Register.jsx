@@ -26,7 +26,7 @@ export default class Register extends React.Component {
     };
   }
 
-  handleChange(e) {
+  handleChange =(e)=> {
     e.preventDefault();
 
     this.setState({
@@ -34,7 +34,7 @@ export default class Register extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit =(e)=> {
     e.preventDefault();
     const { email, password, name, position } = this.state;
     const data = {
@@ -132,7 +132,7 @@ export default class Register extends React.Component {
               type="submit"
               fullWidth
               variant="contained"
-              onClick={this.handlSubmit}
+              onClick={this.handleSubmit}
               color="primary"
               className=" "
               style={{ margin: (3, 0, 2) }}

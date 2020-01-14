@@ -19,7 +19,6 @@ export default class Login extends React.Component {
     };
   }
 
-
   handleChange(e) {
     e.preventDefault();
 
@@ -30,82 +29,92 @@ export default class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const {email,password} = this.state
+    const { email, password } = this.state;
     const data = {
       email,
       password
     };
   }
 
- render() {
-  return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className="mt-5" style={{ 
-       display: "flex",
-       marginTop:"100px",
-       flexDirection: "column",
-       alignItems: "center" }}>
-        <Avatar className="m-1" style={{ backgroundColor: "#f44336", }}>
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Student Login
-        </Typography>
-        <form className=" " style={{ width: "100%", // Fix IE 11 issue.
-                      marginTop: "20px"}} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            onChange={e => this.handleChange(e)}
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            onChange={e => this.handleChange(e)}
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            onClick={this.handlSubmit}
-            color="primary"
-          
-            className=" " style={{ margin: (3, 0, 2) }}>
-            Login In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2" className="mt-5">
-                Forgot password?
-              </Link>
+  render() {
+    return (
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div
+          className="mt-5"
+          style={{
+            display: "flex",
+            marginTop: "100px",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
+          <Avatar className="m-1" style={{ backgroundColor: "#f44336" }} />
+          <Typography component="h1" variant="h5">
+            Student Login
+          </Typography>
+          <form
+            className=" "
+            style={{
+              width: "100%", // Fix IE 11 issue.
+              marginTop: "20px"
+            }}
+            noValidate
+          >
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              onChange={e => this.handleChange(e)}
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              onChange={e => this.handleChange(e)}
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              onClick={this.handleSubmit}
+              color="primary"
+              className=" "
+              style={{ margin: (3, 0, 2) }}
+            >
+              Login In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link to="/login" variant="body2" className="mt-5">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item className="mt-5">
+                <Link to="/loginTeacher" variant="body2">
+                  Dont have an account? Sign Up
+                </Link>
+              </Grid>
             </Grid>
-            <Grid item className="mt-5">
-              <Link href="#" variant="body2">
-                {"Dont have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-    </Container>
-  );
-}
+          </form>
+        </div>
+      </Container>
+    );
+  }
 }

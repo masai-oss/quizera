@@ -92,7 +92,7 @@ export default class LoginTeacher extends React.Component {
               type="submit"
               fullWidth
               variant="contained"
-              onClick={this.handlSubmit}
+              onClick={this.handleSubmit}
               color="primary"
               className=" "
               style={{ margin: (3, 0, 2) }}
