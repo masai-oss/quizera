@@ -19,14 +19,12 @@ export const loginUserFail = () => ({
 export const loginUser = payload => {
   return dispatch => {
     dispatch(loginUserRequest());
-    console.log(payload);
     return axios
       .post("/admin_login", {
         email: payload.email,
         password: payload.password
       })
       .then(res => {
-        console.log("success", res);
         localStorage.setItem("quizera_auth_token", res.token);
         dispatch(loginUserSuccess(res));
       })

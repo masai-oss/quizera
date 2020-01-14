@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import DashboardRoutes from "./DashboardRoutes";
 import Login from "./Login";
+import LoginTeacher from "./LoginTeacher";
 import Register from "./Register";
 import RegisterAdmin from "./RegisterAdmin";
 import About from "./About";
@@ -19,7 +20,7 @@ const Routes = () => {
         <Route path="/" exact render={() => <Home />} />
         <Route path="/dash" render={() => <DashboardRoutes />} />
         <Route path="/login" render={() => <Login />} />
-        <Route path="/loginTeacher" render={() => <Login />} />
+        <Route path="/loginTeacher" render={() => <LoginTeacher />} />
         <Route path="/register" render={() => <Register />} />
         <Route path="/registeradmin" render={() => <RegisterAdmin />} />
         <Route path="/about" render={() => <About />} />
