@@ -1,7 +1,10 @@
 import {
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAIL
+  LOGIN_USER_FAIL,
+  LOGIN_TEACHER_FAILURE,
+  LOGIN_TEACHER_SUCCESS,
+  LOGIN_TEACHER_REQUEST
 } from "./actionTypes";
 import axios from "../../utils/axiosInterceptor";
 
@@ -9,13 +12,16 @@ export const loginUserRequest = payload => ({
   type: LOGIN_USER_REQUEST,
   payload
 });
+
 export const loginUserSuccess = payload => ({
   type: LOGIN_USER_SUCCESS,
   payload
 });
+
 export const loginUserFail = () => ({
   type: LOGIN_USER_FAIL
 });
+
 export const loginUser = payload => {
   return dispatch => {
     dispatch(loginUserRequest());
@@ -29,5 +35,35 @@ export const loginUser = payload => {
         dispatch(loginUserSuccess(res));
       })
       .catch(() => dispatch(loginUserFail()));
+  };
+};
+
+export const loginTeacherRequest = payload => ({
+  type: LOGIN_TEACHER_REQUEST,
+  payload
+});
+
+export const loginTeacherSuccess = payload => ({
+  type: LOGIN_TEACHER_SUCCESS,
+  payload
+});
+
+export const loginTeacherFail = () => ({
+  type: LOGIN_TEACHER_FAILURE
+});
+
+export const loginTeacher = payload => {
+  return dispatch => {
+    dispatch(loginTeacherRequest());
+    return axios
+      .post("/teachers/login", {
+        email: payload.email,
+        password: payload.password
+      })
+      .then(res => {
+        localStorage.setItem("quizera_auth_token", res.token);
+        dispatch(loginTeacherSuccess(res));
+      })
+      .catch(() => dispatch(loginTeacherFail()));
   };
 };
