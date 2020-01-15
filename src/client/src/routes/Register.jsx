@@ -26,15 +26,15 @@ export default class Register extends React.Component {
     };
   }
 
-  handleChange =(e)=> {
+  handleChange = e => {
     e.preventDefault();
 
     this.setState({
       [e.target.name]: e.target.value
     });
-  }
+  };
 
-  handleSubmit =(e)=> {
+  handleSubmit = e => {
     e.preventDefault();
     const { email, password, name, position } = this.state;
     const data = {
@@ -43,7 +43,7 @@ export default class Register extends React.Component {
       name,
       position
     };
-  }
+  };
 
   render() {
     return (
