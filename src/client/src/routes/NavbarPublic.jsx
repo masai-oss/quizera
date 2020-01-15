@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
   },
   buttonPadding: {
     margin: "10px"
+  },
+  favicon: {
+    color: "inherit"
   }
 }));
 
@@ -75,9 +78,10 @@ const NavBar = props => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            QuizEra
+            <Link className={classes.favicon} to="/">
+              QuizEra
+            </Link>
           </Typography>
-
           <Button variant="contained" color="primary" onClick={handleLogin}>
             Login
           </Button>
