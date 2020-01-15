@@ -67,3 +67,39 @@ export const loginTeacher = payload => {
       .catch(() => dispatch(loginTeacherFail()));
   };
 };
+
+export const registerUserRequest = payload => ({
+  type: LOGIN_TEACHER_REQUEST,
+  payload
+});
+
+export const registerUserSuccess = payload => ({
+  type: LOGIN_TEACHER_SUCCESS,
+  payload
+});
+
+export const registerUserFailure = () => ({
+  type: LOGIN_TEACHER_FAILURE
+});
+
+export const registerUser = payload => {
+  /*
+  payload: {
+    email,
+    password,
+    userType (student|teacher)
+  }
+  */
+  return dispatch => {
+    dispatch(registerUserRequest());
+    return axios
+      .post(`/${payload.userType}/login`, {
+        email: payload.email,
+        password: payload.password
+      })
+      .then(res => {
+        dispatch(registerUserSuccess(res));
+      })
+      .catch(() => dispatch(registerUserFailure()));
+  };
+};
